@@ -1,0 +1,13 @@
+@import "login";
+
+html, body {
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+#app {
+  width: 100%;
+  height: calc(100% - 4rem);
+  justify-content: center;
+}

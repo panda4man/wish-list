@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Authentication routes
+Auth::routes();
+
+//Social login routes
+Route::group(['prefix' => 'login'], function () {
+    Route::get('/{provider}', 'Auth\LoginController@redirectToProvider')->name('socialLogin');
+    Route::get('/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 });
+
+//Application landing page
+Route::view('/', 'welcome');
+
+Route::get('/home', 'HomeController@index')->name('home');
