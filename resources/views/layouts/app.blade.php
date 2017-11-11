@@ -11,16 +11,16 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-info" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item">
+            <a class="navbar-item" href="/">
                 {{ config('app.name') }}
             </a>
         </div>
         <div class="navbar-menu">
             <div class="navbar-end">
-                <a href="{{route('login')}}" class="navbar-item">Login</a>
-                <a href="{{route('register')}}" class="navbar-item">Register</a>
+                <a href="{{route('login')}}" class="navbar-item {{activePage('login')}}">Login</a>
+                <a href="{{route('register')}}" class="navbar-item {{activePage('register')}}">Register</a>
             </div>
         </div>
     </nav>
