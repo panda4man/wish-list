@@ -10,6 +10,27 @@
             </header>
             <div class="card-content">
                 <div class="content">
+                    <div class="columns">
+                        <div class="column has-text-centered">
+                            <a class="button is-info" href="{{url('/login/facebook')}}">
+                                <span class="icon">
+                                    <i class="fa fa-facebook-f"></i>
+                                </span>
+                                <span>Facebook</span>
+                            </a>
+                        </div>
+                        <div class="column has-text-centered">
+                            <a class="button is-info" href="{{url('/login/google')}}">
+                                <span class="icon">
+                                    <i class="fa fa-google"></i>
+                                </span>
+                                <span>Google</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="or-divider">
+                        <div class="line"></div><div class="or">OR</div><div class="line"></div>
+                    </div>
                     <form method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
                         <div class="field">

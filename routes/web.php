@@ -23,4 +23,12 @@ Route::group(['prefix' => 'login'], function () {
 //Application landing page
 Route::view('/', 'welcome');
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Auth protected routes
+Route::group(['middleware' => 'auth'], function () {
+    //Must be finished registering to view these
+    Route::group(['middleware' => 'finished-registering'], function () {
+        Route::get('/home', 'HomeController@index')->name('home');
+    });
+
+    Route::get('/profile/password', 'UsersController@getPassword');
+});
