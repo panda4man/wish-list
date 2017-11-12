@@ -22,11 +22,11 @@
                             </a>
                         </div>
                         <div class="column has-text-centered">
-                            <a class="button is-info" href="{{url('/login/google')}}">
+                            <a class="button is-info" href="{{url('/login/twitter')}}">
                                 <span class="icon">
-                                    <i class="fa fa-google"></i>
+                                    <i class="fa fa-twitter"></i>
                                 </span>
-                                <span>Google</span>
+                                <span>Twitter</span>
                             </a>
                         </div>
                     </div>

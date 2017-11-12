@@ -41,8 +41,10 @@ return [
         'redirect'      => env('FACEBOOK_REDIRECT', ''),
     ],
 
-    'google' => [
-
+    'twitter' => [
+        'client_id' => env('TWITTER_ID', ''),
+        'client_secret' => env('TWITTER_SECRET', ''),
+        'redirect' => env('TWITTER_REDIRECT', '')
     ],
 
 ];
