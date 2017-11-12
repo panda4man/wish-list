@@ -17,6 +17,7 @@ class FinishedRegistering
     {
         if(auth()->check()) {
             if(!auth()->user()->getAuthPassword()) {
+                session()->flash('flash-warning', 'You must complete your account.');
                 return redirect('/profile/password');
             }
         }

@@ -28,7 +28,9 @@ Route::group(['middleware' => 'auth'], function () {
     //Must be finished registering to view these
     Route::group(['middleware' => 'finished-registering'], function () {
         Route::get('/home', 'HomeController@index')->name('home');
+        Route::get('wish-lists', 'WishListsController@index');
     });
 
     Route::get('/profile/password', 'UsersController@getPassword');
+    Route::post('/profile/password', 'UsersController@postUpdatePassword');
 });

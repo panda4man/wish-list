@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-@section('content')
+@section('parentClass', 'is-flex')
+
+@section('body')
     <div class="register is-flex">
         <div class="card">
             <header class="card-header">

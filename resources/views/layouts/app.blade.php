@@ -20,13 +20,26 @@
         </div>
         <div class="navbar-menu">
             <div class="navbar-end">
-                <a href="{{route('login')}}" class="navbar-item {{activePage('login')}}">Login</a>
-                <a href="{{route('register')}}" class="navbar-item {{activePage('register')}}">Register</a>
+                @if(auth()->check())
+                    <a href="{{url('/wish-lists')}}" class="navbar-item" {{activePage('wish-lists')}}>Wish Lists</a>
+                    <a href="{{ route('logout') }}" class="navbar-item"
+                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                @else
+                    <a href="{{route('login')}}" class="navbar-item {{activePage('login')}}">Login</a>
+                    <a href="{{route('register')}}" class="navbar-item {{activePage('register')}}">Register</a>
+                @endif
             </div>
         </div>
     </nav>
-    <div id="app" class="is-flex">
-        @yield('content')
+    <div id="app" class="@yield('parentClass')">
+        @yield('body')
     </div>
 
     <!-- Scripts -->
