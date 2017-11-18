@@ -21,7 +21,7 @@
         <div class="navbar-menu">
             <div class="navbar-end">
                 @if(auth()->check())
-                    <a href="{{url('/wish-lists')}}" class="navbar-item" {{activePage('wish-lists')}}>Wish Lists</a>
+                    <a href="{{url('/wish-lists')}}" class="navbar-item {{activePage('wish-lists')}}">Wish Lists</a>
                     <a href="{{ route('logout') }}" class="navbar-item"
                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
