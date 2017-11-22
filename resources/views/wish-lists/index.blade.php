@@ -21,7 +21,9 @@
                         </header>
                         <div class="card-content">
                             <div class="content">
-                                
+                                @foreach($list->items as $item)
+                                    <p>{{$item->name}}</p>
+                                @endforeach
                             </div>
                         </div>
                     </div>
