@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\WishList;
+use App\Transformers\WishListTransformer;
 
 class WishListsController extends Controller
 {
@@ -15,6 +16,16 @@ class WishListsController extends Controller
 
     public function show(WishList $list)
     {
-        return view('wish-lists.show')->with('wishList', $list);
+        $wishListJson = fractal()
+            ->item($list, new WishListTransformer)
+            ->includeItems()
+            ->toArray();
+
+        return view('wish-lists.show')->with([
+            'wishList' => $list,
+            'json'     => [
+                'wishList' => $wishListJson
+            ]
+        ]);
     }
 }
