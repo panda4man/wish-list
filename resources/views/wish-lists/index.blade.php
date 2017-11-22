@@ -26,6 +26,9 @@
                                 @endforeach
                             </div>
                         </div>
+                        <footer class="card-footer">
+                            <a class="card-footer-item" href="{{route('wishListDetails', $list)}}">Edit</a>
+                        </footer>
                     </div>
                 </div>
             @endforeach
