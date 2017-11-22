@@ -28,9 +28,9 @@ Route::group(['middleware' => 'auth'], function () {
     //Must be finished registering to view these
     Route::group(['middleware' => 'finished-registering'], function () {
         Route::get('/home', 'HomeController@index')->name('home');
-        Route::redirect('/home', '/wish-lists');
         Route::get('/wish-lists', 'WishListsController@index');
-        Route::get('/wish-lists/{wish_list}', 'WishListsController@show');
+        Route::get('/wish-lists/{wish_list}', 'WishListsController@show')->name('wishListDetails');
+        Route::redirect('/home', '/wish-lists');
     });
 
     Route::get('/profile/password', 'UsersController@getPassword');
