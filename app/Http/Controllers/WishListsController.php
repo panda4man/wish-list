@@ -8,7 +8,7 @@ class WishListsController extends Controller
 {
     public function index()
     {
-        $wishLists = WishList::orderBy('name')->get();
+        $wishLists = WishList::with('items')->orderBy('name')->get();
 
         return view('wish-lists.index')->with('wishLists', $wishLists);
     }
